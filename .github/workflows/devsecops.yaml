@@ -10,7 +10,7 @@ on:
       - main
 
 env:
-  IMAGE_NAME: chosam2/petclinic
+  IMAGE_NAME: hyungwookhub/petclinic
   REGISTRY: docker.io
 
 jobs:
