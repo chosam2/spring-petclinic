@@ -86,7 +86,7 @@ jobs:
       - name: Evaluate ZAP Results
         id: zap-results
         run: |
-          high_alerts=$(grep -c "high:" zap_report.html)
+          high_alerts=$(grep -c "high:" report_html.html)
           if (( $high_alerts > 5 )); then
             echo "::error::ZAP scan failed - high alerts exceed threshold" 
             exit 1
