@@ -6,6 +6,7 @@ plugins {
   id 'org.cyclonedx.bom' version '1.8.2'
   id 'io.spring.javaformat' version '0.0.41'
   id "io.spring.nohttp" version "0.0.11"
+  id "org.sonarqube" version "4.4.1.3373"
 }
 
 apply plugin: 'java'
@@ -65,6 +66,13 @@ checkstyle {
 checkstyleNohttp {
   configDirectory = project.file('src/checkstyle')
   configFile = file('src/checkstyle/nohttp-checkstyle.xml')
+}
+
+sonar {
+  properties {
+    property "sonar.projectKey", "spring-petclinic"
+    property "sonar.projectName", "spring-petclinic"
+  }
 }
 
 tasks.named("formatMain").configure { dependsOn("checkstyleMain") }
